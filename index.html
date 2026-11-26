@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="בחינה טכנולוגית נוספת של קבצי MRI באמצעות מספר כלי AI מתקדמים. לא ייעוץ, אבחון או פענוח רפואי.">
+  <meta name="description" content="בחינה טכנולוגית נוספת של קבצי MRI באמצעות מספר כלי AI מתקדמים.">
   <title>בדיקה בלבד | בחינת MRI באמצעות AI</title>
   <style>
     :root{--bg:#07182d;--panel:#0c2540;--line:#1c5273;--cyan:#48d9e8;--text:#f3fbff;--muted:#b9cfdd;--warn:#fff4d6}
@@ -24,7 +24,7 @@
     <section class="hero">
       <div>
         <h1>בחינה נוספת של MRI באמצעות <span class="accent">מספר כלי AI מתקדמים</span></h1>
-        <p class="lead">בדיקה טכנולוגית מעמיקה שמטרתה להפיק תצפיות ושאלות אפשריות מתוך חומרי ההדמיה — כתוספת בלבד, ולא במקום רדיולוג או רופא.</p>
+        <p class="lead">בדיקה טכנולוגית מעמיקה המשלבת כמה מנועי AI, הצלבת תוצאות והפקת דו״ח מסודר וברור.</p>
         <div class="price"><b>499 ₪</b><span>לבחינת AI אחת</span></div><br>
         <a class="cta" href="#contact">השאירו פרטים להסבר על התהליך</a>
       </div>
@@ -38,15 +38,20 @@
       <div class="grid">
         <article class="card"><h3>בחינה רב־כלית</h3><p>עיבוד והשוואה באמצעות מספר גישות וכלי AI מתקדמים, בהתאם לסוג הקבצים שנמסרו.</p></article>
         <article class="card"><h3>תוצר מסודר</h3><p>סיכום כתוב של תצפיות, אי־ודאויות ונקודות שכדאי לשקול להעלות מול איש מקצוע רפואי.</p></article>
-        <article class="card"><h3>גבולות ברורים</h3><p>הפרדה מפורשת בין פלט טכנולוגי לבין אבחון רפואי, כולל ציון מגבלות ואפשרות לטעויות.</p></article>
+        <article class="card"><h3>דו״ח שימושי</h3><p>נקודות מרכזיות, שאלות להמשך והצגה ברורה שנועדה לעזור להבין את חומרי הבדיקה לעומק.</p></article>
       </div>
     </section>
 
     <section class="section">
-      <h2>שאלות נפוצות</h2>
-      <details><summary>האם זה מחליף פענוח של רדיולוג?</summary><p>לא. זהו תוצר AI בלבד. הוא אינו מחליף פענוח, אבחון, המלצה או ייעוץ של איש מקצוע רפואי.</p></details>
-      <details><summary>האם התוצאה תמיד נכונה?</summary><p>לא. AI עלול לטעות, להחמיץ ממצאים ולהציג מסקנות שגויות. יש לבדוק כל נקודה מול רדיולוג/רופא מוסמך.</p></details>
-      <details><summary>האם מעלים קבצי MRI בטופס?</summary><p>לא. הטופס אוסף רק שם וטלפון לצורך חזרה. אין להזין בו מידע רפואי. אופן מסירת הקבצים יוסבר בנפרד.</p></details>
+      <h2>איך התהליך עובד?</h2>
+      <div class="grid">
+        <article class="card"><h3>1. שיחת התאמה קצרה</h3><p>מסבירים מה כולל השירות, בודקים שקבצי ההדמיה זמינים ועונים על שאלות.</p></article>
+        <article class="card"><h3>2. העברת הקבצים</h3><p>לאחר השיחה נמסרות הנחיות להעברה מסודרת של קובצי DICOM והחומר הנלווה.</p></article>
+        <article class="card"><h3>3. ניתוח והצלבה</h3><p>מספר כלי AI בוחנים את החומר, והתוצאות מוצלבות ומאורגנות למסמך אחד.</p></article>
+      </div>
+      <details><summary>מה כדאי להכין מראש?</summary><p>את קובצי ה־MRI המקוריים בפורמט DICOM, ובמידת האפשר גם את הדו״ח הקיים לצורך הקשר והשוואה.</p></details>
+      <details><summary>מה מקבלים בסוף?</summary><p>דו״ח כתוב ומובנה הכולל תצפיות, נקודות מרכזיות, אי־ודאויות ושאלות אפשריות להמשך.</p></details>
+      <details><summary>האם מעלים קבצים בטופס?</summary><p>לא. הטופס נועד רק ליצירת קשר. אופן מסירת הקבצים יוסבר בשיחה.</p></details>
     </section>
 
     <section id="contact" class="formbox">
@@ -56,13 +61,13 @@
         <label>טלפון<input name="phone" autocomplete="tel" inputmode="tel" maxlength="24" required></label>
         <label>זמן נוח לחזרה<select name="callback"><option value="לא משנה">לא משנה</option><option value="בוקר">בוקר</option><option value="צהריים">צהריים</option><option value="ערב">ערב</option></select></label>
         <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
-        <label class="check"><input type="checkbox" name="consent" value="yes" required><span>אני מסכים/ה שמנהל השירות ישמור את השם והטלפון לצורך חזרה אליי בקשר לשירות, בהתאם להודעת הפרטיות. ידוע לי שאין בשירות גורם רפואי ושהתוצר עלול להיות שגוי.</span></label>
+        <label class="check"><input type="checkbox" name="consent" value="yes" required><span>אני מסכים/ה שמנהל השירות ישמור את השם והטלפון לצורך חזרה אליי בקשר לשירות, בהתאם להודעת הפרטיות.</span></label>
         <button type="submit">שליחת פרטים</button>
       </form>
     </section>
 
     <section class="section small" id="privacy"><h2>הודעת פרטיות</h2><p>נאספים רק שם, טלפון וזמן מועדף לחזרה, על בסיס הסכמה מפורשת ולמטרת יצירת קשר בנוגע לשירות. אין להזין מידע רפואי בטופס. הנתונים נשמרים במערכת מקומית מוגנת, מועברים רק למנהל השירות, אינם משמשים לפרסום מותאם אישית ואינם נמסרים לצדדים שלישיים לצורכי שיווק. ליד שלא הבשיל יימחק בתוך 30 יום. אפשר לבקש עיון או מחיקה בעת שיחת החזרה או באמצעות שליחת טופס נוסף עם המילה "מחיקה" בשדה השם.</p></section>
   </main>
-  <footer><div class="wrap">בדיקה בלבד · שירות בחינת AI שאינו רפואי · 2026</div></footer>
+  <footer><div class="wrap">בדיקה בלבד · MRI AI Review · 2026</div></footer>
 </body>
 </html>
