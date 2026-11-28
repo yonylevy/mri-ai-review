@@ -26,9 +26,9 @@
         <h1>בחינה נוספת של MRI באמצעות <span class="accent">מספר כלי AI מתקדמים</span></h1>
         <p class="lead">בדיקה טכנולוגית מעמיקה המשלבת כמה מנועי AI, הצלבת תוצאות והפקת דו״ח מסודר וברור.</p>
         <div class="price"><b>499 ₪</b><span>לבחינת AI אחת, כולל איסוף והחזרה עד הבית</span></div><br>
-        <a class="cta" href="#contact">השאירו פרטים להסבר על התהליך</a>
+        <a class="cta" href="#contact">להשארת פרטים</a>
       </div>
-      <img src="assets/hero.png" alt="המחשה מופשטת של שכבות הדמיה העוברות בחינת AI ומופקות למסמך">
+      <img src="assets/hero-with-headline.png" alt="פענוח תוצאות MRI באמצעות בינה מלאכותית">
     </section>
 
     <div class="notice">חשוב: בשירות לא מעורב גורם רפואי. התוצר אינו ייעוץ, אבחון או פענוח רפואי, אלא בחינה נוספת ומעמיקה באמצעות AI. מערכות AI עלולות לטעות, להחמיץ ממצאים או להציג מסקנות שגויות. אין לקבל החלטה רפואית על בסיס התוצר ויש לפנות לרדיולוג/רופא מוסמך.</div>
@@ -58,19 +58,40 @@
     </section>
 
     <section id="contact" class="formbox">
-      <div><h2>רוצים לשמוע איך זה עובד?</h2><p>השאירו שם וטלפון בלבד. נציג יחזור עם הסבר על התהליך והמחיר. אין לכתוב מידע רפואי בטופס.</p><p><b>מחיר:</b> 499 ₪ לבחינה, כולל שליח עד הבית לאיסוף הדיסק ושליח להחזרת הדיסק והתוצאות.</p></div>
-      <form class="form" method="post" action="https://yonis-mac-mini.tail2ea6d6.ts.net:8443/lead" accept-charset="utf-8">
+      <div><h2>להשארת פרטים</h2><p>השאירו שם וטלפון בלבד. אין לכתוב מידע רפואי בטופס.</p><p><b>מחיר:</b> 499 ₪ לבחינה, כולל שליח עד הבית לאיסוף הדיסק ושליח להחזרת הדיסק והתוצאות.</p></div>
+      <form id="leadForm" class="form" method="post" action="https://yonis-mac-mini.tail2ea6d6.ts.net:8443/lead" accept-charset="utf-8">
         <label>שם<input name="name" autocomplete="name" maxlength="80" required></label>
         <label>טלפון<input name="phone" autocomplete="tel" inputmode="tel" maxlength="24" required></label>
         <label>זמן נוח לחזרה<select name="callback"><option value="לא משנה">לא משנה</option><option value="בוקר">בוקר</option><option value="צהריים">צהריים</option><option value="ערב">ערב</option></select></label>
         <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
         <label class="check"><input type="checkbox" name="consent" value="yes" required><span>אני מסכים/ה שמנהל השירות ישמור את השם והטלפון לצורך חזרה אליי בקשר לשירות, בהתאם להודעת הפרטיות.</span></label>
         <button type="submit">שליחת פרטים</button>
+        <p id="formStatus" role="status" aria-live="polite"></p>
       </form>
     </section>
 
     <section class="section small" id="privacy"><h2>הודעת פרטיות</h2><p>נאספים רק שם, טלפון וזמן מועדף לחזרה, על בסיס הסכמה מפורשת ולמטרת יצירת קשר בנוגע לשירות. אין להזין מידע רפואי בטופס. הנתונים נשמרים במערכת מקומית מוגנת, מועברים רק למנהל השירות, אינם משמשים לפרסום מותאם אישית ואינם נמסרים לצדדים שלישיים לצורכי שיווק. ליד שלא הבשיל יימחק בתוך 30 יום. אפשר לבקש עיון או מחיקה בעת שיחת החזרה או באמצעות שליחת טופס נוסף עם המילה "מחיקה" בשדה השם.</p></section>
   </main>
   <footer><div class="wrap">בדיקה בלבד · MRI AI Review · 2026</div></footer>
+  <script>
+    const form = document.getElementById('leadForm');
+    const status = document.getElementById('formStatus');
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const button = form.querySelector('button');
+      button.disabled = true;
+      status.textContent = 'שולח…';
+      try {
+        const response = await fetch(form.action, {method: 'POST', body: new FormData(form)});
+        if (!response.ok) throw new Error('submit failed');
+        form.reset();
+        status.textContent = 'תודה, הפרטים התקבלו.';
+      } catch (_) {
+        status.textContent = 'לא הצלחנו לשלוח כרגע. נא לנסות שוב בעוד רגע.';
+      } finally {
+        button.disabled = false;
+      }
+    });
+  </script>
 </body>
 </html>
